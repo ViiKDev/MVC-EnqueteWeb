@@ -1,0 +1,49 @@
+@model EnqueteWeb.Models.Resposta
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/lib/bootstrap5/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <title>EnqueteWeb :: Resposta</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-3 col-6">
+                <h1>EnqueteWeb</h1>
+                <h2>Você teria coragem de fazer uma viagem sem volta para Marte?</h2>
+                <h4>Preencha os campos e marque sua resposta.</h4>
+                <div asp-validation-summary="All"></div>
+                <form method="POST" novalidate>
+                    <div class="form-group">
+                        <label asp-for="Nome">Seu Nome: </label><br>
+                        <input asp-for="Nome" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Seu E-mail: </label><br>
+                        <input asp-for="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        Resposta:
+                        <div>
+                            <input type="radio" asp-for="Sim" id="rdSim" value="true" class="form-check-input">
+                            <label for="rdSim" class="form-check-label">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" asp-for="Sim" id="rdNao" value="false" class="form-check-input">
+                            <label for="rdNao" class="form-check-label">Não</label>
+                        </div>
+                    </div>
+                    <input type="submit" value="Enviar Resposta" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
